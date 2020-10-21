@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      
+    <title>Dormitory</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header id = "header">
+        <nav class = "navbar navbar-expand navbar-dark" style="background-color: #404146">
+            <div class = "container">
+	            <h5>
+                    <%= link_to '[Dormitory]', home_index_path, {:style => 'color:#E8ECFF;', :class => 'navbar-link'} %>
+	            </h5>
+            </div>
+            <div>
+              <p class="navbar-text pull-right">
+              <% if user_signed_in? %>
+                <strong style="color:#E8ECFF"><%= current_user.email %> </strong>  |<% if current_user.has_role? :admin  %>
+                <%= link_to '관리 페이지', rails_admin_path, :class => 'navbar-link' %> | 
+                <% end %>
+                <%= link_to " 마이페이지 ",  users_index_path, :class => 'navbar-link' %> | 
+                <%= link_to "  로그아웃  ", destroy_user_session_path, method: :delete, :class => 'navbar-link', data: { confirm: '로그아웃 하시겠습니까?' } %>
+              <% else %>
+                <%= link_to " 회원가입 ", new_user_registration_path, :class => 'navbar-link' %>  | 
+                <%= link_to " 로그인 ", new_user_session_path, :class => 'navbar-link' %>
+              <% end %>
+              </p>
+            </div>
+        </nav>
+    </header>
+
+  <body class="container-fluid wrapper" style="padding:2% ">
+
+
+    <div>    
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %> </p>
+    <% end%>
+    
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %> </p>
+    <% end%>
+    <%= yield %>
+
+    </div>
+
+  </body>
+  
+
+     <footer class="page-footer container-fluid wrapper" style="background-color: #404146; margin-top: 2%; max-wudth: 100%">
+      <div class="footer-copyright text-center py-3" style="color: #E8ECFF;">
+        <div> &copy;  COSMOS </div>
+      </div>
+    </footer>
+
+    
+</html>

@@ -1,9 +1,26 @@
 
+ <style type="text/css">
 
+.thumb {
+    background-color: #f4f7f7;
+    height: 100px; width: 200px;
+    display: inline-block;
+}
+#middle{
+    float: left;
+    margin:5px;
+    
+}
+#side_rigth_box{
+    margin:5px;
+    margin-left:845px;
+}
+
+</style>
     
 <div class="jumbotron" style="margin-bottom: 3 ">
 	<div class="container">
-        <h1 style="font-family:inherit">Do you know your <strong> <span style="color: #d44865; font: Bold;">possibilities?</span> </strong></h1>
+        <h1 style="font-family:inherit"> <strong> <span style="color: #d44865; font: Bold;">기숙사 세탁실 모니터링 </span> </strong></h1>
     </div>
 </div>
 
@@ -14,37 +31,84 @@
 
     <div>
         <br>
-        <h2 style = "font-family:inherit"><%= link_to '모든 카테고리', categories_path(@category), {:style => 'color:#489DD4'} %></h2>
-        <hr>
-            <%= render template: "categories/index_category" %>
+        <h3 style = "color: #383A3F; font-family:inherit; text-align:center;" >[ 세탁실 A ]</h3>
+            <hr>
+            <%= render template: "studies/index_all" %>
+            <div style = "padding-left: 30px">
+            <div id = "middle">
+                <div id="main">
+                    <article class="thumb">
+                    <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">1</span> </strong></h3>
+					</article>
+                </div>
+            </div>
+            <div id = "middle">
+                <div id="main">
+                    <article class="thumb">
+                    <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">2</span> </strong></h3>
+					</article>
+                </div>
+            </div>
+            <div id = "middle">
+                <div id="main">
+                    <article class="thumb">
+                    <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">3</span> </strong></h3>
+					</article>
+                </div>
+            </div>
+            <div id = "middle">
+                <div id="main">
+                    <article class="thumb">
+                    <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">4</span> </strong></h3>
+					</article>
+                </div>
+            </div>
+            <div id = "middle">
+                <div id="main">
+                    <article class="thumb">
+                    <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">5</span> </strong></h3>
+					</article>
+                </div>
+            </div>
+            
+            
+            <div id = "side_rigth">
+                <div id = "side_rigth_box">
+					<div id="main">
+                        <article class="thumb">
+                        <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">6</span> </strong></h3>
+						</article>
+                    </div>
+                    <div id="main">
+                        <article class="thumb">
+                        <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">7</span> </strong></h3>
+						</article>
+                    </div>
+                    <div id="main">
+                        <article class="thumb">
+                        <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">8</span> </strong></h3>
+						</article>
+                    </div>
+                    <div id="main">
+                        <article class="thumb">
+                        <h3 style="font-family:inherit"> <strong> <span style="color: #f15c5c; font: Bold;">9</span> </strong></h3>
+						</article>
+                    </div>
+                    </div>
+                </div>
+            </div>
         <br>
     </div>
 
 
 
-        <br>
-        <br>
-        <h2 style = "color: #489DD4; font-family:inherit">모든 스터디</h2>
-            <hr>
-            <%= render template: "studies/index_all" %>
         <br>
     </div>
     
 
 
     <hr>
-    <div style="padding-top:0.7%;">
-        <p>
-        <center>
-        <h4><span style="font:Bold">
-            <%= link_to '스터디 제안하기', categories_path, {:style => 'color:#E48699;'} %></span>
-        </h4>
-        </center>
-        </p>
-        <br>
 
-        
-    </div>
 
 </div>
 <% else %>
