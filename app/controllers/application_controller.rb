@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
     require 'socket'
 
-    s = TCPSocket.new 'localhost', 10000
+    s = TCPSocket.new 'localhost', 10001
 
     while line = s.gets # Read lines from socket
         puts line         # and print them
