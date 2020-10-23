@@ -17,12 +17,11 @@ class ApplicationController < ActionController::Base
 
     require 'socket'
 
-    server = TCPServer.new 10001 # Server bound to port 2000
+    s = TCPSocket.new 'localhost', 10001
 
-    loop do
-        client = server.accept    # Wait for a client to connect
-        client.puts "Hello !"
-        client.puts "Time is #{Time.now}"
-        client.close
+    while line = s.gets # Read lines from socket
+        puts line         # and print them
     end
+
+    s.close 
 end
