@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
         redirect_to main_app.root_path, alert: exception.message
     end
 
-    require 'socket'
+#    require 'socket'
 
-    s = TCPSocket.new 'localhost', 10001
+#    s = TCPSocket.new '0.0.0.0', 10001
 
-    while line = s.gets # Read lines from socket
-        puts line         # and print them
-    end
+#    while line = s.gets # Read lines from socket
+#        puts line         # and print them
+#    end
 
-    s.close 
+#    s.close 
 end
